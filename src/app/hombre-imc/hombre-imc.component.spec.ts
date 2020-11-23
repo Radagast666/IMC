@@ -1,25 +1,39 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {imcHombre} from "./hombre-imc.component";
 
-import { HombreIMCComponent } from './hombre-imc.component';
+describe('IMC unit test', () => {
 
-describe('HombreIMCComponent', () => {
-  let component: HombreIMCComponent;
-  let fixture: ComponentFixture<HombreIMCComponent>;
+  it('should calculate IMC 80 / (200 * 200)', () =>{
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ HombreIMCComponent ]
-    })
-    .compileComponents();
-  });
+    let result =0 ;
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(HombreIMCComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    result = imcHombre(200, 80);
+    expect(result).toBe(20);
+  }
+  )
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+  it('should calculate IMC 60 / (176 * 176)', () =>{
+
+    let result =0 ;
+
+    result = imcHombre(176, 60);
+    expect(result).toBe(19.4);
+  }
+  )
+
+  it('should calculate IMC 50 / 150 * 150', () =>{
+
+    let result =0 ;
+
+    result = imcHombre(150, 50);
+    expect(result).toBe(22.2);
+  }
+  )
+
+
+
+
+
+})
+
+
+

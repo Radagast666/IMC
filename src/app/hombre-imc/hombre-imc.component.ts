@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+export function imcHombre(est, pes){
+ let imc = 0;
+ 
+ imc = pes / (est * est)
+ return imc;
 
-@Component({
-  selector: 'app-hombre-imc',
-  templateUrl: './hombre-imc.component.html',
-  styleUrls: ['./hombre-imc.component.css']
-})
-export class HombreIMCComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
